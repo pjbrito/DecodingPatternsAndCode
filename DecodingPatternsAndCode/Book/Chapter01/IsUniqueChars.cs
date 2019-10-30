@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DecodingPatternsAndCode.Tests.Book.Chapter01
 {
@@ -21,5 +22,29 @@ namespace DecodingPatternsAndCode.Tests.Book.Chapter01
             }
             return true;
         }
+
+        public static bool IsUniqueCharsOptimized(string str)
+        {
+            var rgx = new Regex("[^a-z]", RegexOptions.Compiled);
+            var filteredString = rgx.Replace(str, "");
+            if (string.CompareOrdinal(str, filteredString) != 0)
+            {
+                throw new ArgumentException($"The input string {str} contains invalid arguments!");
+            }
+
+            var checker = 0;
+            foreach (var c in str)
+            {
+                var val = c - 'a';
+                if ((checker & (1 << val)) > 0)
+                {
+                    return false;
+                }
+
+                checker |= (1 << val);
+            }
+            return true;
+        }
+
     }
 }

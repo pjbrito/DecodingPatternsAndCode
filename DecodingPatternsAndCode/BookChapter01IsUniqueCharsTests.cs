@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Linq;
-using System.Text;
+﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
+using System;
 using Xunit;
 using static DecodingPatternsAndCode.Tests.Book.Chapter01.IsUniqueCharsBaseCase;
 
 namespace DecodingPatternsAndCode.Tests
 {
-    public class BookChapter01Tests
+    public class BookChapter01IsUniqueCharsTests
     {
         public class TheIsUniqueCharsAlgorithmShould
         {
@@ -24,7 +23,30 @@ namespace DecodingPatternsAndCode.Tests
             }
 
             [Theory]
+            [InlineData("myblackfoxwithdrugpens", true)]
+            [InlineData("blackfoxpen", true)]
+            [InlineData("amazingchars", false)]
+            [InlineData("a", true)]
+            [InlineData("", true)]
+            [InlineData("bb", false)]
+            public void BeAbleToDetectRepeatedCharsInTheOptimizedVersion(string inputString, bool expectedResult)
+            {
+                var actualResult = IsUniqueCharsOptimized(inputString);
+                Assert.Equal(expectedResult, actualResult);
+            }
+
+            [Theory]
+            [InlineData("MyBlackFoxWithDrugPens")]
+            [InlineData("BlackFoxPen")]
+            [InlineData("AmazingChars")]
+            public void BeAbleToDetectBadInputStringsInTheOptimizedVersion(string inputString)
+            {
+                Assert.Throws<ArgumentException>(() => { IsUniqueCharsOptimized(inputString); });
+            }
+
+            [Theory]
             [InlineData(-1, "10000000000000000000000000000000")]
+            #region [InlineData(0, "00000000000000000000000000000001")] to [InlineData(128, "00000000000000000000000000000001")]
             [InlineData(0, "00000000000000000000000000000001")]
             [InlineData(1, "00000000000000000000000000000010")]
             [InlineData(2, "00000000000000000000000000000100")]
@@ -154,46 +176,17 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData(126, "01000000000000000000000000000000")]
             [InlineData(127, "10000000000000000000000000000000")]
             [InlineData(128, "00000000000000000000000000000001")]
+            #endregion
             public void UseTheShiftOperationCorrectly(int inputValue, string resultBitRepresentation)
             {
                 var inputResult = 1 << inputValue; // shift operation
                 var resultString = (new BitVisualizer(inputResult)).GetBitString();
 
-                Assert.True(string.Compare(resultBitRepresentation, resultString) == 0);
+                Assert.True(string.CompareOrdinal(resultBitRepresentation, resultString) == 0);
             }
 
-            public class BitVisualizer
-            {
-                private readonly int _intBitValue;
-                private readonly BitArray _intermediateRepresentation;
-                private readonly int[] _bitValues;
-
-                public BitVisualizer(int intBitValue)
-                {
-                    _intBitValue = intBitValue;
-                    _intermediateRepresentation = new BitArray(new[] { intBitValue });
-                    _bitValues = _intermediateRepresentation
-                        .Cast<bool>()
-                        .Select(b => (b ? 1 : 0))
-                        .ToArray();
-                }
-
-                public string GetBitString()
-                {
-                    var str = new StringBuilder();
-                    foreach (var b in _bitValues)
-                    {
-                        str.Insert(0, (b == 0 ? 0 : 1));
-                    }
-                    return str.ToString();
-                }
-
-                public override string ToString()
-                {
-                    return GetBitString();
-                }
-            }
         }
+
     }
 
 }
