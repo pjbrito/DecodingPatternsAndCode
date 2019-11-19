@@ -1,9 +1,8 @@
-﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
-using System;
+﻿using System;
+using DecodingPatternsAndCode.Tests.Book.Chapter01;
 using Xunit;
-using static DecodingPatternsAndCode.Tests.Book.Chapter01.IsUniqueCharsBaseCase;
 
-namespace DecodingPatternsAndCode.Tests
+namespace DecodingPatternsAndCode.Tests.BookTests
 {
     public class BookChapter01IsUniqueCharsTests
     {
@@ -18,7 +17,7 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData("bb", false)]
             public void BeAbleToDetectRepeatedChars(string inputString, bool expectedResult)
             {
-                var actualResult = IsUniqueChars(inputString);
+                var actualResult = IsUniqueCharsBaseCase.IsUniqueChars(inputString);
                 Assert.Equal(expectedResult, actualResult);
             }
 
@@ -31,7 +30,7 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData("bb", false)]
             public void BeAbleToDetectRepeatedCharsInTheOptimizedVersion(string inputString, bool expectedResult)
             {
-                var actualResult = IsUniqueCharsOptimized(inputString);
+                var actualResult = IsUniqueCharsBaseCase.IsUniqueCharsOptimized(inputString);
                 Assert.Equal(expectedResult, actualResult);
             }
 
@@ -41,7 +40,7 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData("AmazingChars")]
             public void BeAbleToDetectBadInputStringsInTheOptimizedVersion(string inputString)
             {
-                Assert.Throws<ArgumentException>(() => { IsUniqueCharsOptimized(inputString); });
+                Assert.Throws<ArgumentException>(() => { IsUniqueCharsBaseCase.IsUniqueCharsOptimized(inputString); });
             }
 
             [Theory]

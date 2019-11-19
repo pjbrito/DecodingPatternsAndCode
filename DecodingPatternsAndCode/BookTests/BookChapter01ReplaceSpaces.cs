@@ -1,7 +1,7 @@
-﻿using Xunit;
-using static DecodingPatternsAndCode.Tests.Book.Chapter01.ReplaceSpaces;
+﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
+using Xunit;
 
-namespace DecodingPatternsAndCode.Tests
+namespace DecodingPatternsAndCode.Tests.BookTests
 {
     public class BookChapter01ReplaceSpaces
     {
@@ -13,7 +13,7 @@ namespace DecodingPatternsAndCode.Tests
             public void BeAbleToCorrectlyInsertTheSpaceEscapeCodes(string inputString, string expectedResultString)
             {
                 var charArr = inputString.ToCharArray();
-                ReplaceSpacesBase(ref charArr, charArr.Length);
+                ReplaceSpaces.ReplaceSpacesBase(ref charArr, charArr.Length);
 
                 var resultString = new string(charArr);
                 Assert.True(string.CompareOrdinal(expectedResultString, resultString) == 0);

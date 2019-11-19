@@ -1,7 +1,7 @@
-﻿using Xunit;
-using static DecodingPatternsAndCode.Tests.Book.Chapter01.PermutationsChecker;
+﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
+using Xunit;
 
-namespace DecodingPatternsAndCode.Tests
+namespace DecodingPatternsAndCode.Tests.BookTests
 {
     public class BookChapter01Permutations
     {
@@ -17,7 +17,7 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData("bb", "bb", false)]
             public void BeAbleToDetectStringPermutations(string inputString1, string inputString2, bool expectedResult)
             {
-                var actualResult = Permutation(inputString1, inputString2);
+                var actualResult = PermutationsChecker.Permutation(inputString1, inputString2);
                 Assert.Equal(expectedResult, actualResult);
             }
 
@@ -31,7 +31,7 @@ namespace DecodingPatternsAndCode.Tests
             [InlineData("bb", "bb", false)]
             public void BeAbleToDetectStringPermutationsInTheOptimizedVersion(string inputString1, string inputString2, bool expectedResult)
             {
-                var actualResult2 = PermutationOptimized(inputString1, inputString2);
+                var actualResult2 = PermutationsChecker.PermutationOptimized(inputString1, inputString2);
                 Assert.Equal(expectedResult, actualResult2);
             }
 
