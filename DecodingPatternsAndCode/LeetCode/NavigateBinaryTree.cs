@@ -7,29 +7,27 @@ namespace DecodingPatternsAndCode.Tests.LeetCode
     {
         public IList<int> PreOrderTraversal(TreeNode root)
         {
-            var l = root.Left;
-            var r = root.Right;
+            var r = root;
+            var list = new List<int> {r.Val};
 
-            var lst = new List<int> {root.Val};
-
-            if (l != null)
+            if (r.Left != null)
             {
-                var lr = PreOrderTraversal(l);
-                if (lr?.Count > 0)
+                var l1 = PreOrderTraversal(r.Left);
+                if (l1?.Count > 0)
                 {
-                    lst.AddRange(lr);
+                    list.AddRange(l1);
                 }
             }
-            if (r != null)
+            if (r.Right != null)
             {
-                var rr = PreOrderTraversal(r);
-                if (rr?.Count > 0)
+                var r1 = PreOrderTraversal(r.Right);
+                if (r1?.Count > 0)
                 {
-                    lst.AddRange(rr);
+                    list.AddRange(r1);
                 }
             }
 
-            return (IList<int>)lst;
+            return (IList<int>)list;
         }
     }
 }

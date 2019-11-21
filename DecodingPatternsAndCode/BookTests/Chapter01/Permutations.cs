@@ -1,9 +1,9 @@
 ﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
 using Xunit;
 
-namespace DecodingPatternsAndCode.Tests.BookTests
+namespace DecodingPatternsAndCode.Tests.BookTests.Chapter01
 {
-    public class BookChapter01Permutations
+    public class Permutations
     {
         public class ThePermutationsAlgorithmShould
         {

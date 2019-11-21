@@ -2,9 +2,9 @@
 using DecodingPatternsAndCode.Tests.Book.Chapter01;
 using Xunit;
 
-namespace DecodingPatternsAndCode.Tests.BookTests
+namespace DecodingPatternsAndCode.Tests.BookTests.Chapter01
 {
-    public class BookChapter01IsUniqueCharsTests
+    public class IsUniqueCharsTests
     {
         public class TheIsUniqueCharsAlgorithmShould
         {
@@ -44,6 +44,7 @@ namespace DecodingPatternsAndCode.Tests.BookTests
             }
 
             [Theory]
+            [InlineData(-2, "01000000000000000000000000000000")]
             [InlineData(-1, "10000000000000000000000000000000")]
             #region [InlineData(0, "00000000000000000000000000000001")] to [InlineData(128, "00000000000000000000000000000001")]
             [InlineData(0, "00000000000000000000000000000001")]
