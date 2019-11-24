@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DecodingPatternsAndCode.Tests.Toptal.Tests
+﻿namespace DecodingPatternsAndCode.Tests.Toptal.Tests
 {
     public class MySolution // SmallestPositiveIntegerNotInArray
     {

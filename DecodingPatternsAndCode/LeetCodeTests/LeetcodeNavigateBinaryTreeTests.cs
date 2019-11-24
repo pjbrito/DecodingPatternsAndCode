@@ -10,7 +10,8 @@ namespace DecodingPatternsAndCode.Tests.LeetCodeTests
         [Fact]
         public void ReturnPreOrderNavigationNodeRLSorting()
         {
-            var u = InitBinaryTreeRootRL(out var n);
+            TreeNode n;
+            var u = InitBinaryTreeRootRL(out n);
 
             var res = u.PreOrderTraversal(n);
 
@@ -22,7 +23,8 @@ namespace DecodingPatternsAndCode.Tests.LeetCodeTests
         [Fact]
         public void ReturnPreOrderNavigationNodeRLRSorting()
         {
-            var u = InitBinaryTreeRootRLR(out var n);
+            TreeNode n;
+            var u = InitBinaryTreeRootRLR(out n);
 
             var res = u.PreOrderTraversal(n);
 

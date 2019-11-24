@@ -1,5 +1,5 @@
-﻿using System;
-using DecodingPatternsAndCode.Tests.Book.Chapter01;
+﻿using DecodingPatternsAndCode.Tests.Book.Chapter01;
+using System;
 using Xunit;
 
 namespace DecodingPatternsAndCode.Tests.BookTests.Chapter01

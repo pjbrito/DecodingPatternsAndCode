@@ -86,7 +86,6 @@ C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\bin\Debu
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\obj\Debug\netcoreapp3.0\DecodingPatternsAndCode.Tests.csprojAssemblyReference.cache
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\obj\Debug\netcoreapp3.0\DecodingPatternsAndCode.Tests.AssemblyInfoInputs.cache
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\obj\Debug\netcoreapp3.0\DecodingPatternsAndCode.Tests.AssemblyInfo.cs
 C:\Projects\GitHubRepos\DecodingPatternsAndCode\DecodingPatternsAndCode\obj\Debug\netcoreapp3.0\DecodingPatternsAndCode.Tests.csproj.CopyComplete
