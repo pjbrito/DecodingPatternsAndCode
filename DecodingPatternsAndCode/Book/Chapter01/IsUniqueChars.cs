@@ -46,5 +46,27 @@ namespace DecodingPatternsAndCode.Tests.Book.Chapter01
             return true;
         }
 
+
+        public static bool IsUniqueCharsMemOptimized(string str)
+        {
+            var vis = string.Empty;
+            var bitSet = 0;
+            foreach (var c in str)
+            {
+                var v = new BitVisualizer(bitSet);
+                vis = v.ToString();
+                //var val_1 = 0 - 'a'; // a =97
+                var val = c - 'a';
+                if ((bitSet & (1 << val)) > 0)
+                {
+                    return false;
+                }
+
+                bitSet |= (1 << val);
+            }
+
+            return true;
+        }
+
     }
 }

@@ -22,7 +22,7 @@ namespace DecodingPatternsAndCode.Tests.Book.Chapter01
             var str = new StringBuilder();
             foreach (var b in _bitValues)
             {
-                str.Insert(0, (b == 0 ? 0 : 1));
+                str.Insert(0, b);
             }
             return str.ToString();
         }

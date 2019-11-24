@@ -30,7 +30,7 @@ namespace DecodingPatternsAndCode.Tests.BookTests.Chapter01
             [InlineData("bb", false)]
             public void BeAbleToDetectRepeatedCharsInTheOptimizedVersion(string inputString, bool expectedResult)
             {
-                var actualResult = IsUniqueCharsBaseCase.IsUniqueCharsOptimized(inputString);
+                var actualResult = IsUniqueCharsBaseCase.IsUniqueCharsMemOptimized(inputString);
                 Assert.Equal(expectedResult, actualResult);
             }
 
