@@ -10,28 +10,31 @@ namespace DecodingPatternsAndCode.Tests.BookTests.Chapter08
         [Fact]
         public void TestTripleStep()
         {
-            var res = TripleStep.CountWays(100);
 
-            var max1 = int.MaxValue;    // 2 147 483 647                //
-            //                             1 836 311 903                // 45 in fib series
-            //                             2 082 876 103                // 36 in fb3 series
-            var max2 = Int64.MaxValue;  // 9 223 372 036 854 775 807    //
-            //                             7 540 113 804 746 346 429    // 91 in fib series
-            //                             7 015 254 043 203 144 209    // 72 in fb3 series
+            var max1 = int.MaxValue;        //                          2 147 483 647   //
+            //                                                          2 082 876 103   //  36 in fb3 series
+            //                                                          1 836 311 903   //  45 in fib series
+            var max2 = Int64.MaxValue;      //              9 223 372 036 854 775 807   //
+            //                                              7 015 254 043 203 144 209   //  72 in fb3 series
+            //                                              7 540 113 804 746 346 429   //  91 in fib series
+            var max3 = decimal.MaxValue;    // 79 228 162 514 264 337 593 543 950 335   //
+            //                                 43 458 307 810 949 238 672 214 594 009   // 109 in fb3 series
+            //                                 50 095 301 248 058 391 139 327 916 261   // 138 in fib series
 
-            var test = _recur;
+            var res = TripleStep.CountWays(10);
+            Assert.Equal(274, res);
         }
 
-        public static Int64 CountWays(Int64 n)
+        public static decimal CountWays(int n)
         {
-            var memo = new Int64[n + 1];
+            var memo = new decimal[n + 1];
             Array.Fill(memo, -1);
             var res = CountWays(n, memo);
 
             return res;
         }
 
-        private static Int64 CountWays(Int64 n, Int64[] memo)
+        private static decimal CountWays(int n, decimal[] memo)
         {
             _recur++;
 
